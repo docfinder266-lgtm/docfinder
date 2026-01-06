@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document Finder – PDFs, Forms, Portals & Articles Instantly</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="Document Finder helps students, professionals and offices instantly open the best official PDFs, forms, portals and articles worldwide. Save time and avoid wrong documents.">
+<meta name="keywords" content="document finder, pdf finder, form finder, portal finder, question paper finder, official documents">
+<link rel="canonical" href="https://yourdomain.com/">
+
+<meta name="theme-color" content="#2563eb">
+
+<!-- PWA Manifest -->
+<link rel="manifest" href="data:application/json,{
+  &quot;name&quot;:&quot;Document Finder&quot;,
+  &quot;short_name&quot;:&quot;DocFinder&quot;,
+  &quot;start_url&quot;:&quot;.&quot;,
+  &quot;display&quot;:&quot;standalone&quot;,
+  &quot;background_color&quot;:&quot;#ffffff&quot;,
+  &quot;theme_color&quot;:&quot;#2563eb&quot;
+}">
+
+<style>
+:root{
+  --primary:#2563eb;
+  --dark:#0f172a;
+  --light:#f8fafc;
+}
+body{
+  margin:0;
+  font-family:Inter,Arial,sans-serif;
+  background:var(--light);
+  color:var(--dark);
+}
+header{
+  padding:45px 20px;
+  text-align:center;
+  background:linear-gradient(135deg,var(--primary),#1e40af);
+  color:#fff;
+}
+header h1{margin:0;font-size:32px}
+header p{opacity:.9;font-size:15px}
+
+.ad-box{
+  max-width:1000px;
+  margin:20px auto;
+  background:#fff;
+  border:2px dashed #cbd5f5;
+  border-radius:10px;
+  text-align:center;
+  padding:20px;
+  color:#64748b;
+  font-size:14px;
+}
+
+.benefits{
+  max-width:1000px;
+  margin:30px auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:15px;
+  padding:0 20px;
+}
+.benefit{
+  background:#fff;
+  padding:16px;
+  border-radius:12px;
+  box-shadow:0 6px 18px rgba(0,0,0,.08);
+  text-align:center;
+  font-size:14px;
+}
+
+.box{
+  max-width:620px;
+  margin:30px auto;
+  background:#fff;
+  padding:25px;
+  border-radius:16px;
+  box-shadow:0 10px 30px rgba(0,0,0,.12);
+}
+.box h2{text-align:center;margin-bottom:8px}
+.box p{text-align:center;font-size:13px;color:#555}
+
+select,input,button{
+  width:100%;
+  padding:14px;
+  margin-top:12px;
+  border-radius:8px;
+  border:1px solid #cbd5f5;
+  font-size:15px;
+}
+button{
+  background:var(--primary);
+  color:#fff;
+  border:none;
+  font-weight:600;
+  cursor:pointer;
+}
+button:hover{opacity:.9}
+
+#loading{
+  display:none;
+  margin-top:15px;
+  text-align:center;
+  font-size:14px;
+  color:var(--primary);
+}
+
+footer{
+  text-align:center;
+  padding:30px 20px;
+  font-size:13px;
+  color:#64748b;
+}
+footer a{
+  color:var(--primary);
+  text-decoration:none;
+  margin:0 10px;
+}
+
+section.page{
+  max-width:850px;
+  margin:40px auto;
+  background:#fff;
+  padding:30px;
+  border-radius:14px;
+  box-shadow:0 8px 25px rgba(0,0,0,.1);
+}
+
+</style>
+
+<!-- SEO Schema -->
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"WebSite",
+ "name":"Document Finder",
+ "url":"https://yourdomain.com",
+ "potentialAction":{
+   "@type":"SearchAction",
+   "target":"https://yourdomain.com/?q={search_term_string}",
+   "query-input":"required name=search_term_string"
+ }
+}
+</script>
+</head>
+
+<body>
+
+<header>
+  <h1>📄 Document Finder</h1>
+  <p>One smart search → best document, portal or article</p>
+</header>
+
+<!-- AD PLACE TOP -->
+<div class="ad-box">
+  🔸 Advertisement Space (728×90 / Responsive)
+</div>
+
+<div class="benefits">
+  <div class="benefit">⏱ Save hours of searching</div>
+  <div class="benefit">🎯 No wrong or outdated documents</div>
+  <div class="benefit">📄 PDFs, Forms, Portals & Articles</div>
+  <div class="benefit">🌍 Global & neutral results</div>
+</div>
+
+<div class="box">
+  <h2>Find What You Need</h2>
+  <p>Smart intent detection with manual control</p>
+
+  <select id="level">
+    <option value="">Select Use Case</option>
+    <option>School</option>
+    <option>College</option>
+    <option>University</option>
+    <option>Office / Government</option>
+    <option>General</option>
+  </select>
+
+  <select id="country">
+    <option value="">Select Country</option>
+    <option>India</option>
+    <option>USA</option>
+    <option>UK</option>
+    <option>Canada</option>
+    <option>Australia</option>
+    <option>Other / International</option>
+  </select>
+
+  <select id="intent">
+    <option value="auto">Auto Detect (Recommended)</option>
+    <option value="pdf">PDF</option>
+    <option value="form">Form</option>
+    <option value="portal">Portal / Link</option>
+    <option value="article">Article</option>
+  </select>
+
+  <input id="query" placeholder="Enter subject, exam, form, topic or name">
+
+  <button onclick="go()">Find Best Result</button>
+
+  <div id="loading">🔍 Finding the best result…</div>
+</div>
+
+<!-- AD PLACE MIDDLE -->
+<div class="ad-box">
+  🔸 Advertisement Space (300×250 / Native)
+</div>
+
+<footer>
+  <a href="#about">About</a>
+  <a href="#privacy">Privacy Policy</a>
+  <a href="#contact">Contact</a>
+</footer>
+
+<section id="about" class="page">
+<h2>About Document Finder</h2>
+<p>
+Document Finder is a global utility designed to help students, professionals,
+and office users quickly access the most relevant official documents, PDFs,
+forms, portals, and articles without confusion or wasted time.
+</p>
+<p>
+Instead of browsing multiple pages and risking incorrect or outdated documents,
+users are redirected directly to the most relevant source using smart intent
+analysis and trusted search logic.
+</p>
+</section>
+
+<section id="privacy" class="page">
+<h2>Privacy Policy</h2>
+<p>
+Document Finder does not collect personal information, does not require user
+accounts, and does not track users individually.
+</p>
+<p>
+Only basic browser storage may be used to improve usability.
+No personal data is sold or shared.
+</p>
+</section>
+
+<section id="contact" class="page">
+<h2>Contact</h2>
+<p>For questions or feedback, contact:</p>
+<p><strong>📧 docfinder266@gmail.com</strong></p>
+</section>
+
+<script>
+function go(){
+  const q=document.getElementById("query").value.trim();
+  if(!q) return alert("Please enter what you are looking for");
+
+  document.getElementById("loading").style.display="block";
+
+  const level=document.getElementById("level").value;
+  const country=document.getElementById("country").value;
+  const intent=document.getElementById("intent").value;
+
+  let search=q;
+
+  if(country && !country.includes("Other")){
+    search+=" "+country;
+  }
+
+  let finalIntent=intent;
+
+  if(intent==="auto"){
+    if(level==="School"||level==="College"||level==="University"){
+      finalIntent="pdf";
+    }else if(level==="Office / Government"){
+      finalIntent="form";
+    }else{
+      finalIntent="article";
+    }
+  }
+
+  if(finalIntent==="pdf"){
+    search+=" filetype:pdf official";
+  }else if(finalIntent==="form"){
+    search+=" application form official";
+  }else if(finalIntent==="portal"){
+    search+=" official website portal";
+  }else if(finalIntent==="article"){
+    search+=" detailed guide article";
+  }
+
+  setTimeout(()=>{
+    window.location.href="https://www.google.com/search?btnI=1&q="+encodeURIComponent(search);
+  },1200);
+}
+
+// PWA Service Worker
+if("serviceWorker" in navigator){
+  navigator.serviceWorker.register(
+    URL.createObjectURL(new Blob([`
+      self.addEventListener('fetch', e=>{})
+    `],{type:'text/javascript'}))
+  );
+}
+</script>
+
+</body>
+</html>
