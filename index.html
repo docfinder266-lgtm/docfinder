@@ -1,89 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="google-site-verification" content="SvY2n7mUc4Vp8q3BOswHai24YXSRbgfZ-clhZCD8nyI" />
 <meta charset="UTF-8">
-<title>Document Finder – PDFs, Forms, Portals & Articles Instantly</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<meta name="description" content="Document Finder helps students, professionals and offices instantly open the best official PDFs, forms, portals and articles worldwide. Save time and avoid wrong documents.">
+<meta name="google-site-verification" content="SvY2n7mUc4Vp8q3BOswHai24YXSRbgfZ-clhZCD8nyI" />
+<title>Document Finder – PDFs, Forms, Portals & Articles</title>
+<meta name="description" content="Document Finder instantly finds official PDFs, forms, portals, and articles for students, professionals, and offices. Save time and avoid wrong documents.">
 <meta name="keywords" content="document finder, pdf finder, form finder, portal finder, question paper finder, official documents">
-<link rel="canonical" href="https://yourdomain.com/">
-
 <meta name="theme-color" content="#2563eb">
 
-<!-- PWA Manifest -->
-<link rel="manifest" href="data:application/json,{
-  &quot;name&quot;:&quot;Document Finder&quot;,
-  &quot;short_name&quot;:&quot;DocFinder&quot;,
-  &quot;start_url&quot;:&quot;.&quot;,
-  &quot;display&quot;:&quot;standalone&quot;,
-  &quot;background_color&quot;:&quot;#ffffff&quot;,
-  &quot;theme_color&quot;:&quot;#2563eb&quot;
-}">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="https://img.icons8.com/color/48/000000/document.png">
 
 <style>
 :root{
   --primary:#2563eb;
-  --dark:#0f172a;
+  --secondary:#1e40af;
   --light:#f8fafc;
+  --dark:#0f172a;
+  --accent:#10b981;
 }
-body{
-  margin:0;
-  font-family:Inter,Arial,sans-serif;
-  background:var(--light);
-  color:var(--dark);
-}
-header{
-  padding:45px 20px;
-  text-align:center;
-  background:linear-gradient(135deg,var(--primary),#1e40af);
-  color:#fff;
-}
-header h1{margin:0;font-size:32px}
-header p{opacity:.9;font-size:15px}
+*{box-sizing:border-box;}
+body{margin:0;font-family:'Inter',Arial,sans-serif;background:var(--light);color:var(--dark);}
+a{text-decoration:none;color:inherit;}
 
-.ad-box{
-  max-width:1000px;
-  margin:20px auto;
-  background:#fff;
-  border:2px dashed #cbd5f5;
-  border-radius:10px;
-  text-align:center;
-  padding:20px;
-  color:#64748b;
-  font-size:14px;
+/* Sticky Nav */
+nav{
+  position:sticky;top:0;background:white;display:flex;justify-content:space-between;align-items:center;padding:15px 30px;
+  box-shadow:0 2px 12px rgba(0,0,0,.1);z-index:1000;
 }
+nav .logo{font-weight:700;font-size:22px;color:var(--primary);}
+nav .menu a{margin-left:20px;font-weight:500;color:var(--dark);}
+nav .menu a:hover{color:var(--primary);}
 
-.benefits{
-  max-width:1000px;
-  margin:30px auto;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:15px;
-  padding:0 20px;
+/* Hero */
+.hero{
+  display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;
+  height:85vh;padding:20px;background:linear-gradient(135deg,var(--primary),var(--secondary));
+  color:white;
 }
+.hero h1{font-size:48px;margin-bottom:15px;}
+.hero p{font-size:18px;margin-bottom:25px;}
+.hero button{
+  background:white;color:var(--primary);
+  border:none;padding:16px 40px;
+  font-size:16px;font-weight:600;border-radius:10px;cursor:pointer;
+  transition:.3s;
+}
+.hero button:hover{opacity:.9;transform:scale(1.05);}
+
+/* Benefits */
+.benefits-section{
+  max-width:1200px;margin:60px auto;padding:0 20px;
+}
+.benefits-section h2{text-align:center;margin-bottom:40px;font-size:28px;color:var(--primary);}
+.benefits{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;}
 .benefit{
-  background:#fff;
-  padding:16px;
-  border-radius:12px;
-  box-shadow:0 6px 18px rgba(0,0,0,.08);
-  text-align:center;
-  font-size:14px;
+  background:white;padding:25px;border-radius:14px;box-shadow:0 10px 25px rgba(0,0,0,.08);
+  text-align:center;font-size:15px;font-weight:500;transition:transform .3s, box-shadow .3s;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
 }
+.benefit:hover{transform:translateY(-5px);box-shadow:0 15px 35px rgba(0,0,0,.12);}
+.benefit i{font-size:30px;color:var(--primary);margin-bottom:12px;}
 
-.box{
-  max-width:620px;
-  margin:30px auto;
-  background:#fff;
-  padding:25px;
-  border-radius:16px;
-  box-shadow:0 10px 30px rgba(0,0,0,.12);
+/* Search Box */
+.search-box{
+  max-width:720px;margin:60px auto;background:white;padding:35px;border-radius:16px;box-shadow:0 12px 30px rgba(0,0,0,.12);
 }
-.box h2{text-align:center;margin-bottom:8px}
-.box p{text-align:center;font-size:13px;color:#555}
-
-select,input,button{
+.search-box h2{text-align:center;margin-bottom:15px;}
+.search-box p{text-align:center;margin-bottom:25px;color:#555;}
+.search-box select,input,button{
   width:100%;
   padding:14px;
   margin-top:12px;
@@ -91,47 +77,58 @@ select,input,button{
   border:1px solid #cbd5f5;
   font-size:15px;
 }
-button{
-  background:var(--primary);
-  color:#fff;
-  border:none;
-  font-weight:600;
-  cursor:pointer;
+.search-box button{
+  background:var(--primary);color:white;font-weight:600;border:none;cursor:pointer;
+  transition:.3s;
 }
-button:hover{opacity:.9}
+.search-box button:hover{opacity:.9;transform:scale(1.02);}
+#loading{text-align:center;color:var(--primary);margin-top:15px;display:none;font-size:14px;}
 
-#loading{
-  display:none;
-  margin-top:15px;
-  text-align:center;
-  font-size:14px;
-  color:var(--primary);
+/* Ad Banner Container */
+.ad-banner {
+  max-width: 728px;
+  margin: 40px auto;
+  text-align: center;
+  padding: 0 20px;
+}
+.ad-banner .ad-container {
+  background: #f8fafc;
+  border-radius: 8px;
+  padding: 10px;
+  border: 1px solid #e2e8f0;
 }
 
+/* Highlights Section */
+.highlights{
+  max-width:1000px;margin:50px auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:25px;padding:0 20px;
+}
+.highlight-card{
+  background:white;padding:25px;border-radius:14px;box-shadow:0 10px 25px rgba(0,0,0,.08);
+  position:relative;overflow:hidden;transition:transform .3s;
+  display:flex;justify-content:center;align-items:center;
+}
+.highlight-card:hover{transform:translateY(-5px);}
+.highlight-card::before{
+  content:"";position:absolute;top:0;left:0;width:100%;height:100%;
+  background:linear-gradient(120deg,#2563eb,#1e40af,#2563eb);opacity:.05;z-index:0;
+}
+.highlight-card p{position:relative;z-index:1;font-weight:600;font-size:15px;text-align:center;}
+
+/* Footer */
 footer{
-  text-align:center;
-  padding:30px 20px;
-  font-size:13px;
-  color:#64748b;
+  text-align:center;padding:50px 20px;background:#f1f5f9;font-size:13px;color:#64748b;
 }
-footer a{
-  color:var(--primary);
-  text-decoration:none;
-  margin:0 10px;
-}
+footer a{color:var(--primary);margin:0 10px;}
+footer a:hover{opacity:.8;}
 
+/* Sections About/Privacy/Contact */
 section.page{
-  max-width:850px;
-  margin:40px auto;
-  background:#fff;
-  padding:30px;
-  border-radius:14px;
-  box-shadow:0 8px 25px rgba(0,0,0,.1);
+  max-width:900px;margin:60px auto;background:#fff;padding:40px;border-radius:14px;box-shadow:0 8px 25px rgba(0,0,0,.1);
 }
-
+section.page h2{margin-bottom:15px;font-size:22px;color:var(--primary);}
+section.page p{line-height:1.6;font-size:15px;color:#555;}
 </style>
 
-<!-- SEO Schema -->
 <script type="application/ld+json">
 {
  "@context":"https://schema.org",
@@ -149,24 +146,51 @@ section.page{
 
 <body>
 
-<header>
+<!-- Nav -->
+<nav>
+  <div class="logo">Document Finder</div>
+  <div class="menu">
+    <a href="#hero">Home</a>
+    <a href="#benefits">Benefits</a>
+    <a href="#search-box">Search</a>
+    <a href="#highlights">Highlights</a>
+    <a href="#about">About</a>
+    <a href="#privacy">Privacy</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="hero">
   <h1>📄 Document Finder</h1>
-  <p>One smart search → best document, portal or article</p>
-</header>
+  <p>One click → Official PDFs, Forms, Portals & Articles</p>
+  <button onclick="document.getElementById('search-box').scrollIntoView({behavior:'smooth'})">Start Searching</button>
+</section>
 
-<!-- AD PLACE TOP -->
-<div class="ad-box">
-  🔸 Advertisement Space (728×90 / Responsive)
-</div>
-
+<!-- Benefits -->
+<section class="benefits-section" id="benefits">
+<h2>Why Use Document Finder?</h2>
 <div class="benefits">
-  <div class="benefit">⏱ Save hours of searching</div>
-  <div class="benefit">🎯 No wrong or outdated documents</div>
-  <div class="benefit">📄 PDFs, Forms, Portals & Articles</div>
-  <div class="benefit">🌍 Global & neutral results</div>
+  <div class="benefit"><i>⏱</i>Save hours of searching</div>
+  <div class="benefit"><i>🎯</i>Avoid wrong or outdated documents</div>
+  <div class="benefit"><i>📄</i>Access PDFs, Forms, Portals & Articles</div>
+  <div class="benefit"><i>🌍</i>Global & neutral results</div>
+  <div class="benefit"><i>🚀</i>Direct one-click access</div>
 </div>
+</section>
 
-<div class="box">
+<!-- Highlights -->
+<section class="highlights" id="highlights">
+  <div class="highlight-card"><p>Top Question Papers</p></div>
+  <div class="highlight-card"><p>Government Form Templates</p></div>
+  <div class="highlight-card"><p>University Exam PDFs</p></div>
+  <div class="highlight-card"><p>Official Portals & Links</p></div>
+  <div class="highlight-card"><p>Admit Cards & Certificates</p></div>
+  <div class="highlight-card"><p>Trending Articles & Guides</p></div>
+</section>
+
+<!-- Search Box -->
+<div class="search-box" id="search-box">
   <h2>Find What You Need</h2>
   <p>Smart intent detection with manual control</p>
 
@@ -198,60 +222,51 @@ section.page{
   </select>
 
   <input id="query" placeholder="Enter subject, exam, form, topic or name">
-
   <button onclick="go()">Find Best Result</button>
-
   <div id="loading">🔍 Finding the best result…</div>
 </div>
 
-<!-- AD PLACE MIDDLE -->
-<div class="ad-box">
-  🔸 Advertisement Space (300×250 / Native)
+<!-- Native Banner Ad -->
+<div class="ad-banner">
+  <div class="ad-container">
+    <script async="async" data-cfasync="false" src="https://pl28418770.effectivegatecpm.com/94544137ea21c5e5bb9ef8fb246e4ca2/invoke.js"></script>
+    <div id="container-94544137ea21c5e5bb9ef8fb246e4ca2"></div>
+  </div>
 </div>
 
-<footer>
-  <a href="#about">About</a>
-  <a href="#privacy">Privacy Policy</a>
-  <a href="#contact">Contact</a>
-</footer>
-
+<!-- About -->
 <section id="about" class="page">
 <h2>About Document Finder</h2>
-<p>
-Document Finder is a global utility designed to help students, professionals,
-and office users quickly access the most relevant official documents, PDFs,
-forms, portals, and articles without confusion or wasted time.
-</p>
-<p>
-Instead of browsing multiple pages and risking incorrect or outdated documents,
-users are redirected directly to the most relevant source using smart intent
-analysis and trusted search logic.
-</p>
+<p>Document Finder helps students, professionals, and office users quickly access official PDFs, forms, portals, and articles without confusion or wasted time. Using smart intent analysis, it redirects you directly to the most relevant official sources, saving hours of searching.</p>
 </section>
 
+<!-- Privacy -->
 <section id="privacy" class="page">
 <h2>Privacy Policy</h2>
-<p>
-Document Finder does not collect personal information, does not require user
-accounts, and does not track users individually.
-</p>
-<p>
-Only basic browser storage may be used to improve usability.
-No personal data is sold or shared.
-</p>
+<p>Document Finder does not collect personal information, does not require user accounts, and does not track users individually. Only basic browser storage may be used for usability. No personal data is sold or shared.</p>
 </section>
 
+<!-- Contact -->
 <section id="contact" class="page">
 <h2>Contact</h2>
-<p>For questions or feedback, contact:</p>
+<p>Questions or feedback? Reach out at:</p>
 <p><strong>📧 docfinder266@gmail.com</strong></p>
 </section>
+
+<footer>
+  <a href="#hero">Home</a>
+  <a href="#benefits">Benefits</a>
+  <a href="#search-box">Search</a>
+  <a href="#highlights">Highlights</a>
+  <a href="#about">About</a>
+  <a href="#privacy">Privacy</a>
+  <a href="#contact">Contact</a>
+</footer>
 
 <script>
 function go(){
   const q=document.getElementById("query").value.trim();
   if(!q) return alert("Please enter what you are looking for");
-
   document.getElementById("loading").style.display="block";
 
   const level=document.getElementById("level").value;
@@ -259,32 +274,19 @@ function go(){
   const intent=document.getElementById("intent").value;
 
   let search=q;
-
-  if(country && !country.includes("Other")){
-    search+=" "+country;
-  }
+  if(country && !country.includes("Other")) search+=" "+country;
 
   let finalIntent=intent;
-
   if(intent==="auto"){
-    if(level==="School"||level==="College"||level==="University"){
-      finalIntent="pdf";
-    }else if(level==="Office / Government"){
-      finalIntent="form";
-    }else{
-      finalIntent="article";
-    }
+    if(level==="School"||level==="College"||level==="University") finalIntent="pdf";
+    else if(level==="Office / Government") finalIntent="form";
+    else finalIntent="article";
   }
 
-  if(finalIntent==="pdf"){
-    search+=" filetype:pdf official";
-  }else if(finalIntent==="form"){
-    search+=" application form official";
-  }else if(finalIntent==="portal"){
-    search+=" official website portal";
-  }else if(finalIntent==="article"){
-    search+=" detailed guide article";
-  }
+  if(finalIntent==="pdf") search+=" filetype:pdf official";
+  else if(finalIntent==="form") search+=" application form official";
+  else if(finalIntent==="portal") search+=" official website portal";
+  else if(finalIntent==="article") search+=" detailed guide article";
 
   setTimeout(()=>{
     window.location.href="https://www.google.com/search?btnI=1&q="+encodeURIComponent(search);
@@ -294,9 +296,7 @@ function go(){
 // PWA Service Worker
 if("serviceWorker" in navigator){
   navigator.serviceWorker.register(
-    URL.createObjectURL(new Blob([`
-      self.addEventListener('fetch', e=>{})
-    `],{type:'text/javascript'}))
+    URL.createObjectURL(new Blob([`self.addEventListener('fetch', e=>{})`],{type:'text/javascript'}))
   );
 }
 </script>
